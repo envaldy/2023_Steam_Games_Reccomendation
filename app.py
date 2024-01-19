@@ -12,7 +12,7 @@ if 'model' not in st.session_state or 'data' not in st.session_state or 'matrix'
     loaded_sparse_matrix = pickle.load(open('model/bow.pkl', 'rb'))
     st.session_state['model'] = model
     st.session_state['matrix'] = loaded_sparse_matrix
-    df = pd.read_csv('dataset/imdb_clean.csv')
+    df = pd.read_csv('dataset/games_steam_clean.csv')
     st.session_state['data'] = df
 
 st.title('Movie Recommendation')
