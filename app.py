@@ -15,12 +15,12 @@ if 'model' not in st.session_state or 'data' not in st.session_state or 'matrix'
     df = pd.read_csv('dataset/games_steam_clean.csv')
     st.session_state['data'] = df
 
-st.title('2023 "Steam" Game Recommendation')
+st.title('Top Game Picks of 2023!')
 search, image = st.columns([3,1], gap='large')
 
 with search:
     game = st.selectbox(
-        '2023 Steam Game Name',
+        'Which game from 2023 have you played?',
         st.session_state['data']['Name'].tolist()
     )
 
@@ -29,7 +29,7 @@ with image:
     title_text = game
     st.image(image_link, width=70)
 
-if st.button('Recommend Me 2023 Steam Games'):
+if st.button('Recommend Me A Fun and Similar Games'):
     st.subheader('Games you\'ll likes :heart:')
     idx = st.session_state['data'][st.session_state['data']['Name'] == game].index[0]
     content = st.session_state['data'].loc[idx, 'metadata']
