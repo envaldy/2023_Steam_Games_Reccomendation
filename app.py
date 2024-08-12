@@ -6,6 +6,7 @@ import nltk
 
 nltk.download('stopwords')
 nltk.download('punkt') 
+nltk.download('punkt_tab')
 
 if 'model' not in st.session_state or 'data' not in st.session_state or 'matrix' not in st.session_state:
     model = pickle.load(open('model/tf.pkl', 'rb'))
